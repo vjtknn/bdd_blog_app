@@ -1,8 +1,19 @@
-%h3.text-center
+%h1.text-center
   Adding New Article
 .row
   .col-md-12
     =form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f|
+      - if @article.errors.any?
+        .card.border-danger.col-offset-md-1
+          .card-header.bg-danger
+            %h4.card-title.text-light
+              =pluralize(@article.errors.count, "error")
+              prohibited this article from being saved:
+          .card-body
+            %ul
+              -@article.errors.full_messages.each do |msg|
+                %li.text-danger
+                  =msg
       .form-group
         .control-label.col-md-1
           =f.label :title
