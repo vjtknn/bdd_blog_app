@@ -1,7 +1,7 @@
 %h1 Articles index pages
 = link_to "New Article", new_article_path, class: "btn btn-primary"
 -if @articles.empty?
-  .card.border-danger
+  .card.alert-danger
     %h1{id: 'no-articles'}
       No articles created
 -else
