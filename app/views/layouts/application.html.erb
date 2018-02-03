@@ -12,7 +12,7 @@
     <%= render 'shared/app_header' %>
     <div class='container'>
       <div class="row">
-        <div class="col-md-12"> </div>
+        <div class="col-md-12">
           <% flash.each do |key, message| %>
             <div class="text-center alert alert-<%= key == 'notice' ? 'success' : 'danger' %>">
               <%= message %>
@@ -20,6 +20,7 @@
           <% end %>
 
           <%= yield %>
+          </div>
         </div>
       </div>
     </div>
