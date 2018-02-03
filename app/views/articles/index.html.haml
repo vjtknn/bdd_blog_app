@@ -1,2 +1,10 @@
 %h1 Articles index pages
 = link_to "New Article", new_article_path, class: "btn btn-primary"
+-@articles.each do |article|
+  .card.article-card
+    .card-header.bg-light.border-secondary
+      %h2
+        =link_to article.title, article_path(article)
+    .card-body
+      %p.cart-text
+        = truncate(article.body, length: 250)
