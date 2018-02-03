@@ -3,3 +3,4 @@
 %p
   =@article.body
 =fa_icon "calendar", text: "#{@article.created_at.strftime("%b %d %Y")}"
+= link_to "Edit Article", edit_article_path(@article), class: "btn btn-outline-primary" 
